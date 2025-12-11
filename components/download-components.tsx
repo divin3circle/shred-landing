@@ -1,7 +1,7 @@
 "use client";
 import { Button } from "./ui/button";
 import Image from "next/image";
-import { Download } from "lucide-react";
+import { Download, ExternalLink } from "lucide-react";
 import { LINKS } from "@/constants";
 
 function DownloadComponents() {
@@ -122,7 +122,7 @@ function DownloadComponents() {
             onClick={() => navigateTo(LINKS.docker)}
           >
             Docker Image
-            <Download className="size-4" />
+            <ExternalLink className="size-4" />
           </Button>
         </div>
       </div>
