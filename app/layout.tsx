@@ -15,8 +15,8 @@ const ubuntuMono = Ubuntu_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Shred Wallet",
-  description: "A terminal-native Hedera wallet built with Go",
+  title: "Shred Store",
+  description: "A terminal store for TUI applications",
 };
 
 export default function RootLayout({

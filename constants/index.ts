@@ -12,3 +12,10 @@ export const LINKS = {
   github: "https://github.com/divin3circle/shred",
   docker: "https://hub.docker.com/r/sylusabel/shred",
 };
+
+export const platforms = [
+  { name: "macOS", icon: "macos.png" },
+  { name: "Linux", icon: "linux.png" },
+  { name: "Windows", icon: "windows.jpg" },
+  { name: "Docker", icon: "docker.png" },
+];
