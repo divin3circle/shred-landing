@@ -6,9 +6,8 @@ import AppsComponent from "@/components/apps-component";
 export default function AppsHomePage() {
   return (
     <div className="max-w-7xl mx-auto relative">
-      <section className="fixed top-0 w-full z-50">
-        <Navbar />
-      </section>
+      <Navbar />
+
       <AppBackgroundRippleEffect />
 
       <section className="my-8 px-2">

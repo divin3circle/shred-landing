@@ -10,32 +10,13 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import Link from "next/link";
-import {
-  ChevronsDown,
-  ChevronsRight,
-  Github,
-  MenuIcon,
-  Twitter,
-} from "lucide-react";
+import { ChevronsRight, Github, MenuIcon, Twitter } from "lucide-react";
 import { Button } from "./ui/button";
-import { useEffect, useState } from "react";
 
 function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
   return (
     <div
-      className={`flex items-center justify-between px-2 z-50 py-2 transition-all duration-300 ease-in-out ${
-        isScrolled ? "blur-3xl bg-white/30" : ""
-      }`}
+      className={`flex items-center justify-between px-2 z-50 py-2 transition-all duration-300 ease-in-out `}
     >
       <div className="flex justify-center gap-2 md:justify-start">
         <Link
@@ -48,11 +29,9 @@ function Navbar() {
       <div className="hidden md:flex items-center justify-between gap-4">
         <div className="flex items-center gap-1">
           <p className="font-sans text-sm font-semibold">Browse Apps</p>
-          <ChevronsDown className="size-4" />
         </div>
         <div className="flex items-center gap-1">
           <p className="font-sans text-sm font-semibold">Category</p>
-          <ChevronsDown className="size-4" />
         </div>
       </div>
       <div className="hidden md:flex items-center justify-between gap-4">

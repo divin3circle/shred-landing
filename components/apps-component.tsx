@@ -9,7 +9,9 @@ function AppsComponent({ wrap }: { wrap?: boolean }) {
     window.open(url, "_blank", "noopener,noreferrer");
   };
   return (
-    <div className={`flex gap-2 ${wrap ? "flex-wrap" : ""}`}>
+    <div
+      className={`flex gap-2 flex-col md:flex-row ${wrap ? "flex-wrap" : ""}`}
+    >
       <div className="rounded-3xl border border-gray-300 p-4">
         <div className="flex items-center gap-2">
           <Image
