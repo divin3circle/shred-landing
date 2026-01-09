@@ -31,7 +31,7 @@ function AppsComponent({ wrap }: { wrap?: boolean }) {
           <Button
             variant="outline"
             className="shadow-none w-1/2 rounded-3xl border-gray-300 mt-2 font-sans flex items-center gap-1"
-            onClick={() => navigateTo("/apps/gosetup")}
+            onClick={() => navigateTo("/apps/shred")}
           >
             Explore
             <ExternalLink className="size-4" />
@@ -69,7 +69,7 @@ function AppsComponent({ wrap }: { wrap?: boolean }) {
           <Button
             variant="outline"
             className="shadow-none w-1/2 rounded-3xl border-gray-300 mt-2 font-sans flex items-center gap-1"
-            onClick={() => navigateTo("/apps/shred")}
+            onClick={() => navigateTo("/apps/gosetup")}
           >
             Explore
             <ExternalLink className="size-4" />

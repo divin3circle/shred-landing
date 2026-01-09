@@ -19,3 +19,13 @@ export const platforms = [
   { name: "Windows", icon: "windows.jpg" },
   { name: "Docker", icon: "docker.png" },
 ];
+
+export const bannerImages = {
+  shred: "/shred-home.png",
+  gosetup: "/gosetup-home.png",
+};
+
+export const appIcons = {
+  shred: "/shred-icon.jpg",
+  gosetup: "/gosetup-icon.png",
+};
