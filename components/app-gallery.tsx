@@ -6,7 +6,7 @@ export function GalleryCarousel() {
 
   return (
     <div className="w-full h-full">
-      <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-3xl font-bold text-neutral-800 font-sans">
+      <h2 className="max-w-7xl mx-auto text-lg font-bold text-neutral-800 font-sans">
         App Gallery
       </h2>
       <Carousel images={images} />
@@ -37,7 +37,7 @@ const data = [
 
 function AppGallery() {
   return (
-    <div className="mt-16">
+    <div className="mt-16 border-b border-gray-200 pb-10">
       <GalleryCarousel />
     </div>
   );

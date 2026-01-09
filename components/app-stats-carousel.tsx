@@ -8,8 +8,8 @@ type CarouselItem = {
 
 const carouselItems: CarouselItem[] = [
   {
-    title: "1K+ Ratings",
-    mainContent: <span className="text-xl font-bold font-sans">4.6</span>,
+    title: "Github Stars",
+    mainContent: <span className="text-xl font-bold font-sans">1</span>,
     footerContent: (
       <span className="text-sm mt-1 text-muted-foreground flex items-center justify-between">
         {Array.from({ length: 5 }).map((_, index) => (
@@ -23,6 +23,13 @@ const carouselItems: CarouselItem[] = [
     mainContent: <span className="text-xl font-bold font-sans">4+</span>,
     footerContent: (
       <span className="text-xs font-sans text-muted-foreground">Controls</span>
+    ),
+  },
+  {
+    title: "Chart",
+    mainContent: <span className="text-xl font-bold font-sans">No. 1</span>,
+    footerContent: (
+      <span className="text-xs font-sans text-muted-foreground">Downloads</span>
     ),
   },
   {
@@ -67,17 +74,17 @@ const carouselItems: CarouselItem[] = [
 
 function StatsCarousel() {
   return (
-    <div className="mt-10 flex items-center justify-between overflow-x-auto hide-scrollbar">
+    <div className="mt-10 flex items-center justify-between overflow-x-auto hide-scrollbar border-t border-b border-gray-200 py-4">
       {carouselItems.map((item, index) => (
         <div
           key={index}
-          className="h-28 p-4 mr-4 flex flex-col items-center justify-between"
+          className="h-26 p-4 mr-4 flex flex-col items-center justify-between"
         >
-          <h3 className="text-md font-semibold text-slate-800 mb-2 font-sans text-xs">
+          <h3 className="text-md uppercase font-semibold text-muted-foreground mb-2 font-sans text-xs">
             {item.title}
           </h3>
           <div className="mb-2">{item.mainContent}</div>
-          <div>{item.footerContent}</div>
+          <div className="">{item.footerContent}</div>
         </div>
       ))}
     </div>

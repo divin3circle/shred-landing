@@ -85,7 +85,7 @@ export const Carousel = ({ images, initialScroll = 0 }: CarouselProps) => {
     >
       <div className="relative w-full">
         <div
-          className="flex w-full overflow-x-auto hide-scrollbar scroll-smooth py-10 md:py-20"
+          className="flex w-full overflow-x-auto hide-scrollbar scroll-smooth py-10"
           ref={carouselRef}
           onScroll={checkScrollability}
         >
