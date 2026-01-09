@@ -3,6 +3,7 @@ import { Button } from "./ui/button";
 import Image from "next/image";
 import { ExternalLink } from "lucide-react";
 import { platforms } from "@/constants";
+import Link from "next/link";
 
 function AppsComponent({ wrap }: { wrap?: boolean }) {
   const navigateTo = (url: string) => {
@@ -21,16 +22,16 @@ function AppsComponent({ wrap }: { wrap?: boolean }) {
             height={34}
             className="rounded-full border p-.5"
           />
-          <h1 className="text-2xl font-bold font-sans">Shred Wallet</h1>
+          <h1 className="text-base font-bold font-sans">Shred Wallet</h1>
         </div>
-        <p className="text-muted-foreground text-sm text-balance leading-relaxed font-sans">
+        <p className="text-muted-foreground text-xs text-balance leading-relaxed font-sans">
           A terminal-native Hedera wallet built with Go. Manage accounts, send
           and receive HBAR, directly from the terminal.
         </p>
         <div className="flex items-center gap-2 justify-between mt-2">
           <Button
             variant="outline"
-            className="shadow-none w-1/2 rounded-3xl border-gray-200 mt-2 font-sans flex items-center gap-1"
+            className="shadow-none text-xs w-1/2 rounded-3xl border-gray-200 mt-2 font-sans flex items-center gap-1"
             onClick={() => navigateTo("/apps/shred")}
           >
             Explore
@@ -59,16 +60,16 @@ function AppsComponent({ wrap }: { wrap?: boolean }) {
             height={34}
             className="rounded-full border p-.5"
           />
-          <h1 className="text-2xl font-bold font-sans">GoSetup</h1>
+          <h1 className="text-base font-bold font-sans">GoSetup</h1>
         </div>
-        <p className="text-muted-foreground text-sm text-balance leading-relaxed font-sans">
+        <p className="text-muted-foreground text-xs text-balance leading-relaxed font-sans">
           A modern Terminal UI (TUI) for scaffolding Go backend projects with a
           complete, production-ready structure.
         </p>
         <div className="flex items-center gap-2 justify-between mt-2">
           <Button
             variant="outline"
-            className="shadow-none w-1/2 rounded-3xl border-gray-200 mt-2 font-sans flex items-center gap-1"
+            className="shadow-none w-1/2 text-xs rounded-3xl border-gray-200 mt-2 font-sans flex items-center gap-1"
             onClick={() => navigateTo("/apps/gosetup")}
           >
             Explore
@@ -88,6 +89,12 @@ function AppsComponent({ wrap }: { wrap?: boolean }) {
           </div>
         </div>
       </div>
+      <p className="text-sm font-sans mt-4 text-center w-full">
+        Have an app?
+        <Link href="/list" className="underline underline-offset-4 ml-1">
+          List it here!
+        </Link>
+      </p>
     </div>
   );
 }

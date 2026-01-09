@@ -60,6 +60,16 @@ async function AppPage({ params }: AppPageProps) {
       <AppVersions appName={id as string} />
       <AppPrivacyPolicy appName={id as string} />
       <MoreApps appName={id as string} />
+      <p className="text-muted-foreground text-xs mt-4 text-balance leading-relaxed font-sans">
+        All softwares are provided &quot;as is&quot; without warranty. Use at
+        your own risk. Always verify your recovery phrase and keep it secure.
+        <a
+          href="https://github.com/divin3circle/shred/blob/main/USER_GUIDE.md"
+          className="underline underline-offset-4 text-blue-500 ml-1"
+        >
+          See Policy
+        </a>
+      </p>
     </div>
   );
 }
