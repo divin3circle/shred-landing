@@ -1,8 +1,14 @@
 "use client";
 import { Carousel } from "@/components/ui/apple-cards-carousel";
+import { getAppGallery } from "@/constants";
 
-export function GalleryCarousel() {
-  const images = data.map((card) => card.src);
+export function GalleryCarousel({ appName }: { appName: string }) {
+  if (!appName) {
+    return null;
+  }
+  const appGallery = getAppGallery(appName);
+  const data = appGallery.images;
+  const images = data.map((card) => card);
 
   return (
     <div className="w-full h-full">
@@ -14,31 +20,10 @@ export function GalleryCarousel() {
   );
 }
 
-const data = [
-  {
-    src: "/gosetup-home.png",
-  },
-  {
-    src: "/gosetup-1.png",
-  },
-  {
-    src: "/gosetup-2.png",
-  },
-  {
-    src: "/gosetup-3.png",
-  },
-  {
-    src: "/gosetup-1.png",
-  },
-  {
-    src: "/gosetup-2.png",
-  },
-];
-
-function AppGallery() {
+function AppGallery({ appName }: { appName: string }) {
   return (
     <div className="mt-16 border-b border-gray-200 pb-10">
-      <GalleryCarousel />
+      <GalleryCarousel appName={appName} />
     </div>
   );
 }

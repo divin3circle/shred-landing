@@ -52,9 +52,9 @@ async function AppPage({ params }: AppPageProps) {
         </div>
       </div>
 
-      <StatsCarousel />
-      <AppSocials />
-      <AppGallery />
+      <StatsCarousel appName={id as string} />
+      <AppSocials appName={id as string} />
+      <AppGallery appName={id as string} />
       <AppDetails appName={id as string} />
       <Platforms appName={id as string} />
       <AppVersions appName={id as string} />

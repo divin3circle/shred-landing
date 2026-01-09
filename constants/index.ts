@@ -40,6 +40,17 @@ export interface AppData {
   developer: string;
   icon: string;
   category: string;
+  gallery: Gallery;
+  github: string;
+  githubStartCount: number;
+  age: number;
+  period: string;
+  language: string;
+  size: number;
+}
+
+export interface Gallery {
+  images: string[];
 }
 
 export const platforms = [
@@ -59,6 +70,29 @@ export const appIcons = {
   gosetup: "/gosetup-icon.png",
 };
 
+export const appGalleries = {
+  shred: {
+    images: [
+      "/shred-dashboard.png",
+      "/shred-home.png",
+      "/shred-receive.png",
+      "/shred-send.png",
+      "/shred-history.png",
+      "/shred-dashboard.png",
+    ],
+  },
+  gosetup: {
+    images: [
+      "/gosetup-1.png",
+      "/gosetup-2.png",
+      "/gosetup-3.png",
+      "/gosetup-home.png",
+      "/gosetup-1.png",
+      "/gosetup-2.png",
+    ],
+  },
+};
+
 export const appData = {
   gosetup: {
     name: "GoSetup",
@@ -75,6 +109,14 @@ export const appData = {
     developer: "Divin3circle",
     icon: "/gosetup-icon.png",
     category: "Developer Tools",
+    gallery: appGalleries.gosetup,
+    github: "https://github.com/divin3circle/gosetup",
+
+    githubStartCount: 5,
+    age: 6,
+    period: "months",
+    language: "Js",
+    size: 68,
   },
   shred: {
     name: "Shred",
@@ -91,6 +133,13 @@ export const appData = {
     developer: "Divin3circle",
     icon: "/shred-icon.jpg",
     category: "Wallets",
+    gallery: appGalleries.shred,
+    github: "https://github.com/divin3circle/shred",
+    githubStartCount: 1,
+    age: 3,
+    period: "months",
+    language: "Go",
+    size: 15,
   },
 };
 
@@ -234,4 +283,29 @@ export function getDeveloperApps(developerName: string): AppData[] {
   return Object.values(appData).filter(
     (app) => app.developer === developerName
   );
+}
+
+export function getAppGallery(appName: string): Gallery {
+  return appData[appName as keyof typeof appData].gallery;
+}
+
+export function getAppGitHub(appName: string): string {
+  return appData[appName as keyof typeof appData].github;
+}
+
+export function getAppGitHubStarCount(appName: string): number {
+  return appData[appName as keyof typeof appData].githubStartCount;
+}
+
+export function getAppAge(appName: string): { age: number; period: string } {
+  const app = appData[appName as keyof typeof appData];
+  return { age: app.age, period: app.period };
+}
+
+export function getAppLanguage(appName: string): string {
+  return appData[appName as keyof typeof appData].language;
+}
+
+export function getAppSize(appName: string): number {
+  return appData[appName as keyof typeof appData].size;
 }

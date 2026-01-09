@@ -1,3 +1,9 @@
+import {
+  getAppAge,
+  getAppData,
+  getAppDeveloper,
+  getAppGitHubStarCount,
+} from "@/constants";
 import { Building2, StarIcon, Wallet2 } from "lucide-react";
 
 type CarouselItem = {
@@ -6,73 +12,95 @@ type CarouselItem = {
   footerContent: React.ReactNode;
 };
 
-const carouselItems: CarouselItem[] = [
-  {
-    title: "Github Stars",
-    mainContent: <span className="text-xl font-bold font-sans">1</span>,
-    footerContent: (
-      <span className="text-sm mt-1 text-muted-foreground flex items-center justify-between">
-        {Array.from({ length: 5 }).map((_, index) => (
-          <StarIcon key={index} className="size-4 text-slate-500" />
-        ))}
-      </span>
-    ),
-  },
-  {
-    title: "Ages",
-    mainContent: <span className="text-xl font-bold font-sans">4+</span>,
-    footerContent: (
-      <span className="text-xs font-sans text-muted-foreground">Controls</span>
-    ),
-  },
-  {
-    title: "Chart",
-    mainContent: <span className="text-xl font-bold font-sans">No. 1</span>,
-    footerContent: (
-      <span className="text-xs font-sans text-muted-foreground">Downloads</span>
-    ),
-  },
-  {
-    title: "Category",
-    mainContent: (
-      <span className="text-xl font-bold font-sans">
-        <Wallet2 className="inline size-6 mr-2" />
-      </span>
-    ),
-    footerContent: (
-      <span className="text-xs font-sans text-muted-foreground">Wallets</span>
-    ),
-  },
-  {
-    title: "Developer",
-    mainContent: (
-      <span className="text-xl font-bold font-sans">
-        <Building2 className="inline size-6 mr-2" />
-      </span>
-    ),
-    footerContent: (
-      <span className="text-xs font-sans text-muted-foreground">
-        Divin3circle
-      </span>
-    ),
-  },
-  {
-    title: "Language",
-    mainContent: <span className="text-xl font-bold font-sans">EN</span>,
-    footerContent: (
-      <span className="text-xs font-sans text-muted-foreground">Only</span>
-    ),
-  },
-  {
-    title: "Size",
-    mainContent: <span className="text-xl font-bold font-sans">68</span>,
-    footerContent: (
-      <span className="text-xs font-sans text-muted-foreground">MB</span>
-    ),
-  },
-];
+function StatsCarousel({ appName }: { appName: string }) {
+  const carouselItems: CarouselItem[] = [
+    {
+      title: "Github Stars",
+      mainContent: (
+        <span className="text-xl font-bold font-sans">
+          {getAppGitHubStarCount(appName)}
+        </span>
+      ),
+      footerContent: (
+        <span className="text-sm mt-1 text-muted-foreground flex items-center justify-between">
+          {Array.from({ length: 5 }).map((_, index) => (
+            <StarIcon key={index} className="size-4 text-slate-500" />
+          ))}
+        </span>
+      ),
+    },
+    {
+      title: "Ages",
+      mainContent: (
+        <span className="text-xl font-bold font-sans">
+          {getAppAge(appName).age}
+        </span>
+      ),
+      footerContent: (
+        <span className="text-xs font-sans text-muted-foreground">
+          {getAppAge(appName).period}
+        </span>
+      ),
+    },
+    {
+      title: "Chart",
+      mainContent: <span className="text-xl font-bold font-sans">No. 1</span>,
+      footerContent: (
+        <span className="text-xs font-sans text-muted-foreground">
+          Downloads
+        </span>
+      ),
+    },
+    {
+      title: "Category",
+      mainContent: (
+        <span className="text-xl font-bold font-sans">
+          <Wallet2 className="inline size-6 mr-2" />
+        </span>
+      ),
+      footerContent: (
+        <span className="text-xs font-sans text-muted-foreground">
+          {getAppData(appName).category}
+        </span>
+      ),
+    },
+    {
+      title: "Developer",
+      mainContent: (
+        <span className="text-xl font-bold font-sans">
+          <Building2 className="inline size-6 mr-2" />
+        </span>
+      ),
+      footerContent: (
+        <span className="text-xs font-sans text-muted-foreground">
+          {getAppDeveloper(appName)}
+        </span>
+      ),
+    },
+    {
+      title: "Language",
+      mainContent: (
+        <span className="text-xl font-bold font-sans">
+          {getAppData(appName).language}
+        </span>
+      ),
+      footerContent: (
+        <span className="text-xs font-sans text-muted-foreground">Only</span>
+      ),
+    },
+    {
+      title: "Size",
+      mainContent: (
+        <span className="text-xl font-bold font-sans">
+          {getAppData(appName).size}
+        </span>
+      ),
+      footerContent: (
+        <span className="text-xs font-sans text-muted-foreground">MB</span>
+      ),
+    },
+  ];
 
-function StatsCarousel() {
   return (
     <div className="mt-10 flex items-center justify-between overflow-x-auto hide-scrollbar border-t border-b border-gray-200 py-4">
       {carouselItems.map((item, index) => (
