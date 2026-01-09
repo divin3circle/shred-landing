@@ -3,7 +3,6 @@ import { Button } from "./ui/button";
 import Image from "next/image";
 import { ExternalLink } from "lucide-react";
 import { platforms } from "@/constants";
-import Link from "next/link";
 
 function AppsComponent({ wrap }: { wrap?: boolean }) {
   const navigateTo = (url: string) => {
@@ -13,7 +12,7 @@ function AppsComponent({ wrap }: { wrap?: boolean }) {
     <div
       className={`flex gap-2 flex-col md:flex-row ${wrap ? "flex-wrap" : ""}`}
     >
-      <div className="rounded-3xl border border-gray-200 p-4">
+      <div className="rounded-3xl border border-gray-300 p-4">
         <div className="flex items-center gap-2">
           <Image
             src="/shred-icon.jpg"
@@ -31,7 +30,7 @@ function AppsComponent({ wrap }: { wrap?: boolean }) {
         <div className="flex items-center gap-2 justify-between mt-2">
           <Button
             variant="outline"
-            className="shadow-none text-xs w-1/2 rounded-3xl border-gray-200 mt-2 font-sans flex items-center gap-1"
+            className="shadow-none text-xs w-1/2 rounded-3xl border-gray-300 mt-2 font-sans flex items-center gap-1"
             onClick={() => navigateTo("/apps/shred")}
           >
             Explore
@@ -51,7 +50,7 @@ function AppsComponent({ wrap }: { wrap?: boolean }) {
           </div>
         </div>
       </div>
-      <div className="rounded-3xl border border-gray-200 p-4">
+      <div className="rounded-3xl border border-gray-300 p-4">
         <div className="flex items-center gap-2">
           <Image
             src="/gosetup-icon.png"
@@ -69,7 +68,7 @@ function AppsComponent({ wrap }: { wrap?: boolean }) {
         <div className="flex items-center gap-2 justify-between mt-2">
           <Button
             variant="outline"
-            className="shadow-none w-1/2 text-xs rounded-3xl border-gray-200 mt-2 font-sans flex items-center gap-1"
+            className="shadow-none w-1/2 text-xs rounded-3xl border-gray-300 mt-2 font-sans flex items-center gap-1"
             onClick={() => navigateTo("/apps/gosetup")}
           >
             Explore
@@ -89,12 +88,6 @@ function AppsComponent({ wrap }: { wrap?: boolean }) {
           </div>
         </div>
       </div>
-      <p className="text-sm font-sans mt-4 text-center w-full">
-        Have an app?
-        <Link href="/list" className="underline underline-offset-4 ml-1">
-          List it here!
-        </Link>
-      </p>
     </div>
   );
 }

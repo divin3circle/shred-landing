@@ -22,6 +22,20 @@ export default function LoginPage() {
               store where I build random TUIs.
             </p>
             <AppsComponent wrap />
+            <div className="w-full items-center justify-center flex">
+              <Link
+                className="my-8 w-full max-w-xs rounded-3xl font-sans bg-black text-white p-2 inline-block text-center text-sm underline-offset-4"
+                href="/apps"
+              >
+                See More Apps
+              </Link>
+            </div>
+            <p className="text-sm font-sans mt-4 text-center w-full">
+              Have an app?
+              <Link href="/list" className="underline underline-offset-4 ml-1">
+                List it here!
+              </Link>
+            </p>
           </div>
         </div>
       </div>
