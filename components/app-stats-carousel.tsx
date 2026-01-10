@@ -15,7 +15,7 @@ type CarouselItem = {
 function StatsCarousel({ appName }: { appName: string }) {
   const carouselItems: CarouselItem[] = [
     {
-      title: "Github Stars",
+      title: "Stars",
       mainContent: (
         <span className="text-xl font-bold font-sans">
           {getAppGitHubStarCount(appName)}
@@ -23,8 +23,8 @@ function StatsCarousel({ appName }: { appName: string }) {
       ),
       footerContent: (
         <span className="text-sm mt-1 text-muted-foreground flex items-center justify-between">
-          {Array.from({ length: 5 }).map((_, index) => (
-            <StarIcon key={index} className="size-4 text-slate-500" />
+          {Array.from({ length: 3 }).map((_, index) => (
+            <StarIcon key={index} className="size-3 text-slate-500" />
           ))}
         </span>
       ),

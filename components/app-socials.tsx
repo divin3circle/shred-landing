@@ -1,7 +1,7 @@
 "use client";
 
 import { getAppDeveloper, getAppGitHub } from "@/constants";
-import { Github } from "lucide-react";
+import { Download, Github } from "lucide-react";
 import Link from "next/link";
 import { Button } from "./ui/button";
 
@@ -19,7 +19,7 @@ function AppSocials({ appName }: { appName: string }) {
   return (
     <div className="mt-4 border-b border-gray-200 pb-4">
       <h1 className="font-sans text-lg font-semibold mb-2">View on Github</h1>
-      <div className="flex items-center justify-between">
+      <div className="flex md:items-center justify-between flex-col md:flex-row">
         <div className="flex items-center gap-2">
           <div className="border border-gray-200 rounded-full w-12 h-12 flex items-center justify-center">
             <Github className="size-8" color="green" />
@@ -43,10 +43,11 @@ function AppSocials({ appName }: { appName: string }) {
         </div>
         <Button
           variant="default"
-          className="mt-4 w-full max-w-xs rounded-3xl font-sans"
+          className="mt-4 max-w-[300px] w-full flex items-center justify-center gap-1 md:max-w-xs rounded-3xl font-sans"
           onClick={handleInstallClick}
         >
           Get App
+          <Download className="size-4" />
         </Button>
       </div>
     </div>

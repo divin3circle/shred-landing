@@ -108,7 +108,7 @@ export const appData = {
     ],
     developer: "Divin3circle",
     icon: "/gosetup-icon.png",
-    category: "Developer Tools",
+    category: "Tools",
     gallery: appGalleries.gosetup,
     github: "https://github.com/divin3circle/gosetup",
 

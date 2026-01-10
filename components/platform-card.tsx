@@ -3,7 +3,7 @@ import Image from "next/image";
 
 function PlatformCard({ platform }: { platform: Platform }) {
   return (
-    <div className="rounded-3xl h-54 border border-gray-200 p-4">
+    <div className="rounded-3xl h-58 border border-gray-200 p-4">
       <div className="flex items-center gap-2">
         <Image
           src={platform.iconUrl}
