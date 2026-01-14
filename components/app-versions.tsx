@@ -1,11 +1,12 @@
 "use client";
 
-import { getAppVersionReport } from "@/constants";
+import { getAppGitHub, getAppVersionReport } from "@/constants";
 import { Button } from "./ui/button";
+import React from "react";
 
 function AppVersions({ appName }: { appName: string }) {
-  console.log("Fetching versions for:", appName);
   const versions = getAppVersionReport(appName);
+  const url = getAppGitHub(appName);
 
   if (!versions || versions.length === 0) {
     return null;
@@ -48,6 +49,7 @@ function AppVersions({ appName }: { appName: string }) {
           variant="ghost"
           size="sm"
           className="w-full max-w-xs font-sans text-sm font-normal border border-gray-300 rounded-3xl"
+          onClick={() => window.open(url, "_blank")}
         >
           View Full Changelog
         </Button>

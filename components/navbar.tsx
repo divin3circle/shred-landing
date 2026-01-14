@@ -35,11 +35,19 @@ function Navbar() {
         </div>
       </div>
       <div className="hidden md:flex items-center justify-between gap-4">
-        <button className="text-sm font-sans font-medium underline underline-offset-4">
+        <button
+          onClick={() =>
+            window.open("https://github.com/divin3circle", "_blank")
+          }
+          className="text-sm font-sans font-medium underline underline-offset-4"
+        >
           Github
           <Github className="inline size-4 ml-1" />
         </button>
-        <button className="text-sm font-sans font-medium underline underline-offset-4">
+        <button
+          onClick={() => window.open("https://twitter.com/the_sylus", "_blank")}
+          className="text-sm font-sans font-medium underline underline-offset-4"
+        >
           Twitter
           <Twitter className="inline size-4 ml-1" />
         </button>
@@ -65,11 +73,21 @@ function Navbar() {
                   <ChevronsRight className="size-4 ml-2" />
                 </Button>
                 <div className="flex items-center justify-center gap-4">
-                  <button className="text-sm font-sans font-medium underline underline-offset-4">
+                  <button
+                    onClick={() =>
+                      window.open("https://github.com/divin3circle", "_blank")
+                    }
+                    className="text-sm font-sans font-medium underline underline-offset-4"
+                  >
                     Github
                     <Github className="inline size-4 ml-1" />
                   </button>
-                  <button className="text-sm font-sans font-medium underline underline-offset-4">
+                  <button
+                    onClick={() =>
+                      window.open("https://twitter.com/the_sylus", "_blank")
+                    }
+                    className="text-sm font-sans font-medium underline underline-offset-4"
+                  >
                     Twitter
                     <Twitter className="inline size-4 ml-1" />
                   </button>
